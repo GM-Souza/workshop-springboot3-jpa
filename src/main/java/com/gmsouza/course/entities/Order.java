@@ -11,17 +11,17 @@ import java.util.Objects;
 @Table(name = "tb_order")
 public class Order implements Serializable {
 
-   @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private Long id;
-   private Instant moment;
-   private Integer orderStatus;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private Instant moment;
+    private Integer orderStatus;
 
-   @ManyToOne
+    @ManyToOne
     @JoinColumn(name = "client_id")
     private User client;
 
-    public Order(){
+    public Order() {
 
     }
 
@@ -53,7 +53,7 @@ public class Order implements Serializable {
     }
 
     public void setOrderStatus(OrderStatus orderStatus) {
-        if (orderStatus != null){
+        if (orderStatus != null) {
             this.orderStatus = orderStatus.getCode();
         }
     }
